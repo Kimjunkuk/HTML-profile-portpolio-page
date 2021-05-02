@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, 
+maximum-scale=1.0, minimum-scale=1.0">
+    <title>JUNKUK_KIM</title>
+    <style>
+        .vertical-menu {
+            width: 200px;
+            /* 세로 메뉴의 고정 너비 지정하여 최소값 유지될 수 있도록 구성 */
+            text-align: center;
+        }
+
+        .vertical-menu a {
+            background-color: black;
+            /* 메뉴 기본 배경 색상 지정 */
+            color: white;
+            /* 기본 텍스트 컬러 색상 지정 */
+            display: block;
+            /* 메뉴가 순서대로 보여질 수 있도록 함 */
+            padding: 12px;
+            /* 메뉴의 여백을 지정함 */
+            text-decoration: none;
+            /* 링크가 적용된 텍스트에 자동으로 지정되는 밑줄 표시 제거 */
+        }
+
+        .vertical-menu a:hover {
+            background-color: white;
+            /* 마우스 커서를 메뉴에 올렸을때 변경시킬 배경색 */
+            color: black;
+            /* 마우스 커서를 메뉴에 올렸을때 변경시킬 텍스트색 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            /* 기본적으로 모든 여백 허용하지 않음 */
+        }
+
+        #container {
+            height: 100%;
+            width: 100%;
+            font-size: 0;
+        }
+
+        #left,
+        #middle,
+        #right {
+            display: inline-block;
+            *display: inline;
+            vertical-align: top;
+            font-size: 22px;
+        }
+
+        #left {
+            width: 15%;
+        }
+
+        #middle {
+            width: 5%;
+            padding: 5px;
+        }
+
+        #right {
+            width: 80%;
+            height: 100%;
+            border: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .vl {
+            /*메뉴와 우측 Iframe의 경계선*/
+            border-left: 6px solid grey;
+            height: 100%;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body style="background-color:black;">
+    <div id="container">
+        <!--화면 분할 구성 컨테이너-->
+        <div id="left" class="vertical-menu">
+            <!--좌측 메뉴 구역-->
+            <!--화면전환 없이 iframe 에서 target값에 해당하는 메뉴를 바로 출력함-->
+            <a href=home.html target=_top>Home</a>
+            <a href=profile.html target=aaa>Profile</a>
+            <a href=hobby.html target=aaa>Hobby</a>
+            <a href=portfolio.html target=aaa>Portfolio</a>
+            <a href=contact.html target=aaa>Contact</a>
+        </div>
+        <div id="middle" class="vl"></div>
+        <!--메뉴와 iframe 구역의 경계를 표현함, 중간 경계 구역-->
+        <div id="right">
+            <!--우측 iframe 화면 구역-->
+            <iframe src="https://octoprofile.vercel.app/user?id=KIMJUNKUK" name=aaa frameborder="0" marginheight="0"
+                marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
+            <!--iframe 테그 우측 구역에서 전체 화면으로 표시 될 수 있도록 인라인 스타일 설정값 지정-->
+            <!--일반 src 경로 출력 메뉴 클릭시 해당 메뉴 html페이지 노출-->
+        </div>
+    </div>
+</body>
+
+
+</html>

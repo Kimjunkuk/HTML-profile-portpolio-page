@@ -1,0 +1,100 @@
+<html>
+<head>
+<style>
+	/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* 꽉찬 화면으로 출력하도록 가로 사이즈 설정 */
+  padding: 12px; /* 약간의 여백 지정 */ 
+  border: 1px solid grey; /* 회색 경계선지정하여 영역의 경계표현 */
+  border-radius: 4px; /* 모서리에 Round 로 표현되도록 지정함 */
+  box-sizing: border-box; 
+  margin-top: 6px; /* 상단에 여백지정 */
+  margin-bottom: 16px; /* 하단의 여백지정 */
+  resize: vertical /* 세로로 지정 */
+}
+
+/* Submit 버튼의 스타일 설정 */
+input[type=submit] {
+  background-color: grey;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 마우스커서를 Submit 버튼위에 올렸을경우 변경 색상 지정 */
+input[type=submit]:hover {
+	background-color: white; /* 배경 */
+	color: black; /* 텍스트 */
+}
+
+/* 전체 컨테이너의 배경색상 및 특징 지정*/
+.container {
+  background-color: black;
+  padding: 20px;
+}
+.video {
+width: 100%;
+max-width: 900px;
+margin: 30px auto;
+border-radius: 30px;
+background-color: #fff;
+padding: 14px;
+box-sizing: border-box;
+box-shadow: 0px 8px 33px #999;
+}
+.video-container {
+position: relative;
+width: 100%;
+height: auto;
+padding-top: 50%;
+}
+iframe {
+z-index: 1;
+top: 0;
+left: 0;
+position: absolute;
+width: 100%;
+height: 100%;
+}
+</style>
+</head>
+<body style="background-color:black;">
+	<div class="video">
+
+		<div class="video-container">
+
+			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/t_M62_ZSwH8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+		</div>
+
+	</div>
+	<div class="container">
+	  <form action="action_page.php"><!--php로 구성된 서버에서 동작한다는 가정하에 예시 코드 작성-->
+
+		<label for="fname">First Name</label>
+		<input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+		<label for="lname">Last Name</label>
+		<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+		<label for="country">Country</label>
+		<select id="country" name="country">
+		  <option value="australia">Australia</option>
+		  <option value="canada">Canada</option>
+		  <option value="usa">USA</option>
+		</select>
+
+		<label for="subject">Subject</label>
+		<textarea id="subject" name="subject" placeholder="Write Here !!!" style="height:200px"></textarea>
+
+		  <a href="mailto:ehehwnwjs5052@gmail.com"><input type="submit" value="Submit"></a>
+		  <!--버튼 클릭시 지정된 메일주소로 메일을 보낼 수 있도록 설정-->
+		  <!--HTML 양식을 메일 서버와 연동 하지 않았음으로 서버 접속 실패 에러 출력함-->
+
+	  </form>
+	</div>
+</body>
+</html>
+
